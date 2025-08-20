@@ -10,6 +10,7 @@
         <classes>
             <class name="FirstSuite.loginTest"></class>
             <class name="FirstSuite.dynElemTest"></class>
+            <class name="FirstSuite.dropTest"></class>
         </classes>
     </test> <!--Test -->
 </suite> <!--Suite-->

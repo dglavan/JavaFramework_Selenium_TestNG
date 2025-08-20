@@ -1,6 +1,7 @@
 package SeleniumFramework.utils;
 
-import SeleniumFramework.base.BaseClass;
+// Reporter configuration and Logger logic
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -8,16 +9,12 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import java.io.File;
-import java.io.IOException;
 
 public class ExtentReportListener implements ITestListener, ISuiteListener {
     private static ExtentReports extent;
@@ -67,14 +64,7 @@ public class ExtentReportListener implements ITestListener, ISuiteListener {
         test.fail(result.getThrowable());
 
         // Screenshot
-        File screenshot = ((TakesScreenshot) BaseClass.driver).getScreenshotAs(OutputType.FILE);
-        String screenshotPath = System.getProperty("user.dir") + File.separator + "screenshots" + File.separator + result.getName() + ".png";
-        try {
-            FileUtils.copyFile(screenshot, new File(screenshotPath));
-            test.addScreenCaptureFromPath(screenshotPath);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ScreenshotUtil.takeScreenshot(result.getName());
     }
 
     @Override
