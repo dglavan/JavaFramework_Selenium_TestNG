@@ -13,4 +13,7 @@ public class HomePageEvents {
         elem.getWebElement("XPATH", HomePageElements.dynamicModifPage).click();
     }
     public void clickOnDropPage(){elem.getWebElement("XPATH",HomePageElements.dropPage).click();}
+    public void clickOnFormPage(){elem.getWebElement("XPATH", HomePageElements.formPage).click();};
+
+
 }

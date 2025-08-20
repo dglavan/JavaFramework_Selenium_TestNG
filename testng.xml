@@ -11,6 +11,7 @@
             <class name="FirstSuite.loginTest"></class>
             <class name="FirstSuite.dynElemTest"></class>
             <class name="FirstSuite.dropTest"></class>
+            <class name="FirstSuite.textFieldTest"></class>
         </classes>
     </test> <!--Test -->
 </suite> <!--Suite-->
